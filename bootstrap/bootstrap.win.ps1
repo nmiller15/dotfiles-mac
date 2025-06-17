@@ -28,7 +28,4 @@ foreach ($entry in $links) {
     Write-Host "Linked: $link"
 }
 
-# Reload your profile if linked
-if ($PROFILE -eq $links[0].link) {
-    . $PROFILE
-}
+. $PROFILE
