@@ -1,6 +1,9 @@
 #!/usr/bin/env zsh
 
 DOTFILES="$HOME/Projects/dotfiles"
+start() {
+
+} 
 
 write_conf () {
     local dir=$1
@@ -35,5 +38,5 @@ for link in "${(@k)links}"; do
   echo "Linked: $link"
 done
 
-source "$HOME/.zshrc"
+source "$HOME/.zshrc" bootstrap
 tmux source-file "$HOME/.tmux.conf"

@@ -1,3 +1,3 @@
-print "Sourcing fzf..."
+# print "Sourcing fzf..."
 
 source <(fzf --zsh)

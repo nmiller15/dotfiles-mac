@@ -1,4 +1,4 @@
-print "Customizing ZSH prompt..."
+# print "Customizing ZSH prompt..."
 
 setopt prompt_subst
 

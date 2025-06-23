@@ -1,4 +1,4 @@
-print 'Setting up aliases...'
+# print 'Setting up aliases...'
 
 alias ll='ls -lah'
 alias vim='nvim'

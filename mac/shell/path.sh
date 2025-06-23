@@ -1,4 +1,4 @@
-print "Configuring PATH..."
+# print "Configuring PATH..."
 
 # Set PATH properly
 export PATH="$HOME/bin:$PATH"
