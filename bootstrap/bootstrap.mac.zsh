@@ -1,9 +1,8 @@
 #!/usr/bin/env zsh
 
 DOTFILES="$HOME/Projects/dotfiles"
-start() {
 
-} 
+start=$(date +%s)
 
 write_conf () {
     local dir=$1
@@ -11,7 +10,7 @@ write_conf () {
 
     echo "Writing $out"
     cat $dir/* > "$out"
-    echo "# Conf written on $(date)" >> "$out"
+    echo "# Conf written on $(gdate)" >> "$out"
 }
 
 write_conf "$DOTFILES/mac/tmux" "$DOTFILES/mac/.tmux.conf"
@@ -19,6 +18,8 @@ write_conf "$DOTFILES/mac/tmux" "$DOTFILES/mac/.tmux.conf"
 typeset -A links
 links=(
   "$HOME/.zshrc" "$DOTFILES/mac/.zshrc"
+  "$HOME/.zprofile" "$DOTFILES/mac/.zprofile"
+  "$HOME/.zshenv" "$DOTFILES/mac/.zshenv"
   "$HOME/.tmux.conf" "$DOTFILES/mac/.tmux.conf"
 )
 
@@ -40,3 +41,7 @@ done
 
 source "$HOME/.zshrc" bootstrap
 tmux source-file "$HOME/.tmux.conf"
+
+end=$(date +%s)
+elapsed=$((end - start))
+echo "Configurations bootstrapped in ${elapsed}ms"

@@ -19,3 +19,6 @@ alias ga='git add .'
 alias reload="~/Projects/dotfiles/bootstrap/bootstrap.mac.zsh"
 alias pushblog="/Users/nolanmiller/Projects/log-nolan/scripts/pushblog.sh" # Add this to the path
 alias server='ssh -i ~/.ssh/tryagain.pem ubuntu@3.15.29.106'
+
+# Env variables
+export ASDF_DATA_DIR="/your/custom/data/dir"
