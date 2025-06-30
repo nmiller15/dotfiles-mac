@@ -1,0 +1,10 @@
+. ~/Projects/dotfiles/mac/shell/functions.sh
+
+install_if_missing fzf "brew installl fzf" 
+install_if_missing jq "brew installl jq" 
+install_if_missing node "brew install node"
+install_if_missing npm "brew install npm"
+install_if_missing yabai "brew install koekeishiya/formulae/yabai && yabai --start-service"
+install_if_missing sketchybar "brew install FelixKratz/formulae/sketchybar"
+install_if_missing skhd "brew install koekeishiya/formulae/skhd && skhd --start-service"
+install_if_missing tldr "npm install -g tldr"

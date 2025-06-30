@@ -1,0 +1,10 @@
+# Yabai keybindings
+default < alt - 1 : yabai_launch 1 iTerm2 /Applications/iTerm.app
+default < alt - 2 : yabai_launch 2 Safari /Applications/Safari.app
+default < alt - 3 : yabai_launch 3 Obsidian /Applications/Obsidian.app
+default < alt - 4 : yabai_launch 4 Electron /Applications/Visual Studio Code.app
+default < alt - 5 : yabai_launch 5 Postico /Applications/Postico 2.app
+default < alt - 6 : yabai_launch 6 Messages /Applications/Messages.app
+default < alt - 7 : yabai_launch 7 Spark /Applications/Spark.app
+default < alt - 8 : yabai_launch 8 Spotify /Applications/Spotify.app
+default < alt - 9 : yabai_launch 9 Finder Finder

@@ -20,6 +20,8 @@ for FILE in $DOTFILES/mac/shell/*.sh; do
     fi
 done
 
+fpath+=($HOME/Projects/dotfiles/mac/lib)
+
 # Removed because it takes too long to load
 # export NVM_DIR="$HOME/.nvm"
 # [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
