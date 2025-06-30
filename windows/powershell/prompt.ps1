@@ -12,6 +12,7 @@ function prompt {
 	if ($git) {
 		Write-Host $git -ForegroundColor Cyan -NoNewline
 	}
-	Write-Host " &" -ForegroundColor Gray -NoNewline
+        Write-Host ""
+	Write-Host "&" -ForegroundColor Gray -NoNewline
 	return " " 
 }
