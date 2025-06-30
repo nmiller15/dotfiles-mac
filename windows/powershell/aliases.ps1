@@ -11,6 +11,9 @@ Set-Alias df dff
 function ppdf { Set-Location "C:\Code" }
 Set-Alias ppd ppdf
 
+function dff { Set-Location "C:\Code\dotfiles" }
+Set-Alias df dff
+
 function udf{ Set-Location "C:\Users\NMiller" }
 Set-Alias ud udf
 

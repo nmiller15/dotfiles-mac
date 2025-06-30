@@ -1,31 +1,50 @@
 $dotfiles = "C:\Code\dotfiles"
+$sw = [System.Diagnostics.Stopwatch]::StartNew()
 
 $links = @(
     @{ source = "$dotfiles\windows\PowerShell_profile.ps1"; link = $PROFILE },
     @{ source = "$dotfiles\windows\_vimrc"; link = "$HOME\_vimrc" }
+    @{ source = "$dotfiles\shared\nvim"; link = "$HOME\AppData\Local\nvim" }
 )
 
+Write-Host "Linking config files..."
 foreach ($entry in $links) {
     $source = $entry.source
     $link = $entry.link
     $backup = "$link.backup"
 
-    if (Test-Path $link) {
-        if (!(Test-Path $backup)) {
-            Rename-Item -Path $link -NewName $backup -Force
-            Write-Host "Backed up: $backup"
-        } 
-    }
 
+    if (!(Test-Path $backup)) {
+        Rename-Item -Path $link -NewName $backup -Force
+        Write-Host "Backed up: $backup"
+    } 
     # Ensure parent directory exists
     $parent = Split-Path $link
+
     if (!(Test-Path $parent)) {
         New-Item -ItemType Directory -Path $parent -Force | Out-Null
     }
 
     # Create the symlink
-    New-Item -ItemType SymbolicLink -Path $link -Target $source -Force | Out-Null
-    Write-Host "Linked: $link"
+    if (Test-Path $source -PathType Container) {
+        robocopy $source $link /E
+        Write-Host "Copied: $link"
+    } else {
+        New-Item -ItemType SymbolicLink -Path $link -Target $source -Force | Out-Null
+        Write-Host "Linked: $link"
+    }
 }
 
+Write-Host "Installing tools..."
+try {
+    & "$DOTFILES\windows\bin\tools.ps1"
+    Write-Host "Tools installed successfully."
+} catch {
+    Write-Host "Failed to install tools: $_"
+}
+
+Write-Host "Sourcing config files..."
 . $PROFILE
+
+$elapsed = "{0:N3}s" -f $sw.Elapsed.TotalSeconds
+Write-Host "Config bootstrapped in $elapsed"
