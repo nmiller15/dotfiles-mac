@@ -1,4 +1,5 @@
 function prompt {
+        Write-Host ""
 	$git = ""
 		if (Test-Path .git) {
 			$branch = git rev-parse --abbrev-ref HEAD 2>$null
