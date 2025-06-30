@@ -1,10 +1,10 @@
-$DOTFILES = "c:\Code\dotfiles"
+$DOTFILES = "c:\Code\dotfiles\windows\powershell"
 
-# Loop through all subdirectories and source all .ps1 files in them
-Get-ChildItem -Path "$DOTFILES\windows\powershell" -Directory | ForEach-Object {
-    Get-ChildItem -Path $_.FullName -Filter '*.ps1' | Sort-Object Name | ForEach-Object {
-        . $_.FullName
-    }
+Get-ChildItem -Path $DOTFILES -Filter '*.ps1' | Sort-Object Name | ForEach-Object {
+    $ps1_sw = [System.Diagnostics.Stopwatch]::StartNew()
+    . $_.FullName
+    $elapsed = "{0:N3}s" -f $ps1_sw.Elapsed.TotalSeconds
+    Write-Host "Sourced $_ in $elapsed"
 }
 
 
