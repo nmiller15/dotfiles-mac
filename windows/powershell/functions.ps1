@@ -1,3 +1,6 @@
+# Reload Config
+function reload { . "$env:DOTFILES\bootstrap\bootstrap.win.ps1" }
+
 function install_if_missing {
     param (
         [string]$packageName,
@@ -10,4 +13,8 @@ function install_if_missing {
     } else {
         Write-Host "$packageName is already installed."
     }
+}
+
+function twig {
+    & "c:\Code\twig\bin\Debug\net9.0\twig.exe" @args
 }
