@@ -26,3 +26,7 @@ setup_space 6
 setup_space 7
 setup_space 8
 setup_space 9
+setup_space 10
+
+yabai -m rule --add app="System Settings" manage=off
+yabai -m rule --add app="^Raycast$" manage=off
