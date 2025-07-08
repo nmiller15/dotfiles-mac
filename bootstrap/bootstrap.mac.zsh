@@ -60,7 +60,7 @@ echo "Installing tools..."
 eval "$DOTFILES/mac/lib/tools.sh"
 
 echo "Restarting services..."
-brew services restart sketchybar
+# brew services restart sketchybar
 yabai --restart-service
 skhd --restart-service 
 
