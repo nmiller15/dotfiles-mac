@@ -26,7 +26,7 @@
 !down:: Run komorebic stack down, , Hide
 !up:: Run komorebic stack up, , Hide
 !right:: Run komorebic stack right, , Hide
-;!oem_1:: Run komorebic unstack # oem_1 is ;, , Hide
+!,:: Run komorebic unstack, , Hide
 ![:: Run komorebic cycle-stack previous, , Hide
 !]:: Run komorebic cycle-stack next, , Hide
 
