@@ -19,6 +19,10 @@ function twig {
     & "c:\Code\twig\bin\Debug\net9.0\twig.exe" @args
 }
 
+function shopifyupdate { 
+    & "c:\Code\UpdateShopifyGiftCardNotes\bin\Debug\net9.0\UpdateShopifyGiftCardNotes.exe" @args
+}
+
 function pulse {
     & "c:\Code\pulse\bin\Debug\net9.0\pulse.exe" @args
 }
