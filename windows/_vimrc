@@ -22,6 +22,7 @@ nnoremap <Leader>so :source ~\_vimrc<CR>:echo "_vimrc sourced..."<CR>
 nnoremap <Leader>gs :vsc Team.Git.GoToGitChanges<CR>
 nnoremap <Leader>sh :vsc Edit.QuickInfo<CR>
 nnoremap <Leader>r :redo<CR>
+nnoremap <Leader>gu :vsc View.Github.Copilot.Chat<CR>
 
 nnoremap grd :vsc Edit.GoToDefinition<CR>
 nnoremap gri :vsc Edit.GoToImplementation<CR>
