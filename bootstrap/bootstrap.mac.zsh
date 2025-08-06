@@ -19,35 +19,41 @@ write_conf "$DOTFILES/mac/skhd" "$DOTFILES/mac/.skhdrc"
 
 typeset -A links
 links=(
-  "$HOME/.zshrc" "$DOTFILES/mac/.zshrc"
-  "$HOME/.zprofile" "$DOTFILES/mac/.zprofile"
-  "$HOME/.zshenv" "$DOTFILES/mac/.zshenv"
-  "$HOME/.yabairc" "$DOTFILES/mac/.yabairc"
-  # "$HOME/.config/sketchybar/sketchybarrc" "$DOTFILES/mac/sketchybar/sketchybarrc"
-  # "$HOME/.config/sketchybar/plugins" "$DOTFILES/mac/sketchybar/plugins"
-  "$HOME/.skhdrc" "$DOTFILES/mac/.skhdrc"
-  "$HOME/.tmux.conf" "$DOTFILES/mac/.tmux.conf"
-  "$HOME/.config/nvim" "$DOTFILES/shared/nvim"
+  "$DOTFILES/mac/.zshrc" "$HOME/.zshrc"
+  "$DOTFILES/mac/.zprofile" "$HOME/.zprofile"
+  "$DOTFILES/mac/.zshenv" "$HOME/.zshenv"
+  "$DOTFILES/mac/.yabairc" "$HOME/.yabairc"
+ #  "$DOTFILES/mac/sketchybar/sketchybarrc" "$HOME/.config/sketchybar/sketchybarrc"
+ #  "$DOTFILES/mac/sketchybar/plugins" "$HOME/.config/sketchybar/plugins"
+  "$DOTFILES/mac/.skhdrc" "$HOME/.skhdrc"
+  "$DOTFILES/mac/.tmux.conf" "$HOME/.tmux.conf"
+  "$DOTFILES/shared/nvim" "$HOME/.config"
 )
 
-for link in "${(@k)links}"; do
-  source="${links[$link]}"
+for source in "${(@k)links}"; do
+  link="${links[$source]}"
   backup="$link.backup"
 
   if [[ -e "$link" && ! -e "$backup" ]]; then
-    mv -f "$link" "$backup"
-    echo "Backed up: $backup"
+      if [[ ! -d "$link" ]]; then
+        mv -f "$link" "$backup"
+        echo "Backed up: $backup"
+      fi
   fi
 
-  parent_dir="${link:h}"
-  mkdir -p "$parent_dir"
+  if [[ -d "$source" && ! -e "$link" ]]; then
+      mkdir -p "$link"
+  else
+      parent_dir="${link:h}"
+      mkdir -p "$parent_dir"
+  fi 
 
-  if [[ -d "$link" ]]; then;
-      rsync -a "$source/" "$link/"
-      echo "Directory synced: $link"
-  else 
-      ln -sf "$source" "$link"
-      echo "Linked: $link"
+  ln -sf "$source" "$link"
+  
+  if [[ -d "$source" ]]; then
+      echo "Linked ${source:t} directory to $link"
+  else
+      echo "Linked ${source:t} to $link"
   fi
 done
 
