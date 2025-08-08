@@ -8,3 +8,4 @@ install_if_missing yabai "brew install koekeishiya/formulae/yabai && yabai --sta
 install_if_missing sketchybar "brew install FelixKratz/formulae/sketchybar"
 install_if_missing skhd "brew install koekeishiya/formulae/skhd && skhd --start-service"
 install_if_missing tldr "npm install -g tldr"
+install_if_missing gcc "brew install gcc"
