@@ -1,6 +1,7 @@
 . ~/Projects/dotfiles/mac/shell/functions.sh
 
 install_if_missing fzf "brew installl fzf" 
+install_if_missing wget "brew install wget"
 install_if_missing jq "brew installl jq" 
 install_if_missing node "brew install node"
 install_if_missing npm "brew install npm"
