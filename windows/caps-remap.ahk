@@ -1,1 +1,2 @@
+#SingleInsance Force
 Capslock::Esc
