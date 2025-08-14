@@ -89,9 +89,9 @@ vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
 
 -- My custom keymaps
 vim.keymap.set('n', '<leader>e', '<cmd>Explore<CR>')
--- vim.keymap.set('n', '<leader>p', '"_dP')
-vim.keymap.set('i', '<F13>', '<Esc>', { noremap = true })
-vim.keymap.set('n', '<F13>', '<Esc>', { noremap = true })
+vim.keymap.set('x', '<leader>p', '"_dP', { noremap = true, silent = true })
+-- vim.keymap.set('i', '<F13>', '<Esc>', { noremap = true })
+-- vim.keymap.set('n', '<F13>', '<Esc>', { noremap = true })
 
 -- Diagnostic keymaps
 vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagnostic [Q]uickfix list' })
