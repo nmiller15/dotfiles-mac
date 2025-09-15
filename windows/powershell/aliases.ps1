@@ -21,4 +21,5 @@ Set-Alias grep rg
 Set-Alias vim nvim
 Set-Alias tldr "C:\Users\NMiller\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\Scripts\tldr.exe"
 
-
+Remove-Item alias:curl -ErrorAction SilentlyContinue
+Set-Alias curl curl.exe
