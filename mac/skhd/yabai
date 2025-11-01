@@ -21,7 +21,9 @@ default < alt + shift - r         : yabai --restart-service
 default < alt - return : open -F -n -a "iTerm"
 default < alt - s : open -F -n -a "Safari"
 default < alt + shift - m : open -F -n -a "Spotify"
+default < alt - c : open -F -n -a "Messages"
 default < alt - o : open -a "Obsidian"
+default < alt - t : open -a "Things3"
 
 default < alt - m : yabai -m window --minimize
 default < alt - i ; off
