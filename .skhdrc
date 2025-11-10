@@ -128,12 +128,13 @@ default < alt + shift - r         : yabai --restart-service
 
 # Open specific applications
 default < alt - return : open -F -n -a "iTerm"
-default < alt - s : open -F -n -a "Safari"
-default < alt - e : open -F -n -a "Spark"
+default < alt + shift - b : open -F -n -a "Safari"
 default < alt + shift - m : open -F -n -a "Spotify"
-default < alt - c : open -F -n -a "Messages"
-default < alt - o : open -a "Obsidian"
-default < alt - t : open -a "Things3"
+default < alt + shift - c : open -F -n -a "Messages"
+default < alt + shift - m : open -a "Spotify"
+default < alt + shift - o : open -a "Obsidian"
+default < alt + shift - t : open -a "Things3"
+default < alt + shift - a : open -a "ChatGPT"
 
 default < alt - m : yabai -m window --minimize
 default < alt - i ; off
@@ -167,4 +168,4 @@ lctrl + alt - k : yabai -m window --resize top:0:-50; \
                   yabai -m window --resize bottom:0:-50
 lctrl + alt - l : yabai -m window --resize right:50:0; \
                   yabai -m window --resize left:50:0
-# Conf written on Tue Oct 28 16:58:44 EDT 2025
+# Conf written on Sun Nov  9 21:36:27 EST 2025

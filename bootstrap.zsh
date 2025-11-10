@@ -1,7 +1,7 @@
 #!/usr/bin/env zsh
 
 DOTFILES="$HOME/Projects/dotfiles"
-. "$DOTFILES/mac/shell/functions.sh"
+. "$DOTFILES/shell/functions.sh"
 
 bootstrap_start=$(gdate +%s%3N)
 
@@ -14,20 +14,18 @@ write_conf () {
     echo "# Conf written on $(gdate)" >> "$out"
 }
 
-write_conf "$DOTFILES/mac/tmux" "$DOTFILES/mac/.tmux.conf"
-write_conf "$DOTFILES/mac/skhd" "$DOTFILES/mac/.skhdrc"
+write_conf "$DOTFILES/tmux" "$DOTFILES/.tmux.conf"
+write_conf "$DOTFILES/skhd" "$DOTFILES/.skhdrc"
 
 typeset -A links
 links=(
-  "$DOTFILES/mac/.zshrc" "$HOME/.zshrc"
-  "$DOTFILES/mac/.zprofile" "$HOME/.zprofile"
-  "$DOTFILES/mac/.zshenv" "$HOME/.zshenv"
-  "$DOTFILES/mac/.yabairc" "$HOME/.yabairc"
- #  "$DOTFILES/mac/sketchybar/sketchybarrc" "$HOME/.config/sketchybar/sketchybarrc"
- #  "$DOTFILES/mac/sketchybar/plugins" "$HOME/.config/sketchybar/plugins"
-  "$DOTFILES/mac/.skhdrc" "$HOME/.skhdrc"
-  "$DOTFILES/mac/.tmux.conf" "$HOME/.tmux.conf"
-  "$DOTFILES/shared/nvim" "$HOME/.config"
+  "$DOTFILES/.zshrc" 		"$HOME/.zshrc"
+  "$DOTFILES/.zprofile" 	"$HOME/.zprofile"
+  "$DOTFILES/.zshenv" 		"$HOME/.zshenv"
+  "$DOTFILES/.yabairc" 		"$HOME/.yabairc"
+  "$DOTFILES/.skhdrc" 		"$HOME/.skhdrc"
+  "$DOTFILES/.tmux.conf" 	"$HOME/.tmux.conf"
+  "$DOTFILES/nvim" 		"$HOME/.config"
 )
 
 for source in "${(@k)links}"; do
@@ -63,7 +61,7 @@ MODE=bootstrap source "$HOME/.zshrc"
 tmux source-file "$HOME/.tmux.conf"
 
 echo "Installing tools..."
-eval "$DOTFILES/mac/lib/tools.sh"
+eval "$DOTFILES/lib/tools.sh"
 
 echo "Restarting services..."
 # brew services restart sketchybar

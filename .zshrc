@@ -8,7 +8,7 @@ HISTFILE=~/.zsh_history
 # Profile options
 set -o vi # vim keybindings
 
-for FILE in $DOTFILES/mac/shell/*.sh; do
+for FILE in $DOTFILES/shell/*.sh; do
     if [[ "$MODE" == "bootstrap" ]]; then
         start=$(gdate +%s%3N)
     fi
@@ -20,7 +20,7 @@ for FILE in $DOTFILES/mac/shell/*.sh; do
     fi
 done
 
-fpath+=($HOME/Projects/dotfiles/mac/lib)
+fpath+=($HOME/Projects/dotfiles/lib)
 
 # Removed because it takes too long to load
 # export NVM_DIR="$HOME/.nvm"
