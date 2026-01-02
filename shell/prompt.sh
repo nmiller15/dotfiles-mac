@@ -2,10 +2,10 @@
 
 setopt prompt_subst
 
-BLUE="%F{magenta}"
-CYAN="%F{cyan}"
-GREEN="%F{green}"
-DARKGRAY="%F{240}"   # 240 is a dark-gray ANSI 256 code
+ORANGE="%F{214}"      # retro amber
+BEIGE="%F{180}"       # warm beige
+BROWN="%F{94}"        # earthy accent
+DARKGRAY="%F{240}"    # neutral low-contrast tone
 RESET="%f"
 
 parse_git_branch() {
@@ -14,4 +14,5 @@ parse_git_branch() {
   [[ -n $branch ]] && echo " ($branch)"
 }
 
-PROMPT="${BLUE}%n@%m ${CYAN}%~${GREEN}\$(parse_git_branch) ${DARKGRAY}& ${RESET}"
+PROMPT="${ORANGE}%n@%m ${BEIGE}%~${BROWN}\$(parse_git_branch) ${DARKGRAY}& ${RESET}"
+

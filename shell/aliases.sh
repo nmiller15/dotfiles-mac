@@ -1,6 +1,6 @@
 # print 'Setting up aliases...'
 
-alias ll='ls -lah'
+alias ls='eza -l --icons=auto --git --group-directories-first --header --all --time-style=relative'
 alias vim='nvim'
 
 # Nav
@@ -17,7 +17,7 @@ alias ga='git add .'
 
 # util
 alias reload=". ~/Projects/dotfiles/bootstrap.zsh"
-alias pushblog="/Users/nolanmiller/Projects/log-nolan/scripts/pushblog.sh" # Add this to the path
+alias python=python3
 
 # Env variables
 export ASDF_DATA_DIR="/your/custom/data/dir"

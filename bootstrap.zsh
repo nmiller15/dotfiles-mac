@@ -25,6 +25,7 @@ links=(
   "$DOTFILES/.yabairc" 		"$HOME/.yabairc"
   "$DOTFILES/.skhdrc" 		"$HOME/.skhdrc"
   "$DOTFILES/.tmux.conf" 	"$HOME/.tmux.conf"
+  "$DOTFILES/eza-theme.yml"     "$HOME/.config/eza/theme.yml"
   "$DOTFILES/nvim" 		"$HOME/.config"
 )
 

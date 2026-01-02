@@ -20,9 +20,8 @@ default < alt + shift - r         : yabai --restart-service
 # Open specific applications
 default < alt - return : open -F -n -a "iTerm"
 default < alt + shift - b : open -F -n -a "Safari"
-default < alt + shift - m : open -F -n -a "Spotify"
-default < alt + shift - c : open -F -n -a "Messages"
 default < alt + shift - m : open -a "Spotify"
+default < alt + shift - c : open -a "Messages"
 default < alt + shift - o : open -a "Obsidian"
 default < alt + shift - t : open -a "Things3"
 default < alt + shift - a : open -a "ChatGPT"
