@@ -9,3 +9,7 @@ export PATH="/usr/local/opt/postgresql@17/bin:$PATH"
 export PATH="${ASDF_DATA_DIR:-$HOME/.asdf}/shims:$PATH"
 export PATH="$HOME/Projects/dotfiles/bin:$PATH"
 export PATH="$HOME/Projects/dotfiles/lib:$PATH"
+export PATH="$HOME/Projects/dotfiles/bash/bin:$PATH"
+export PATH="$HOME/Projects/dotfiles/python/bin:$PATH"
+
+
