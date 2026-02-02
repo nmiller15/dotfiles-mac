@@ -10,10 +10,6 @@ $links = @(
     @{ source = "$dotfiles\ahk\add-to-things.ahk"; link = "$HOME\OneDrive - CAB\Documents\AutoHotkey\add-to-things.ahk" }
     @{ source = "$dotfiles\ahk\add-to-things.ahk"; link = "$HOME\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup\add-to-things.ahk" }
     @{ source = "$dotfiles\windows_term_settings.json"; link = "$HOME\AppData\Local\Packages\Microsoft.WindowsTerminal_8wekyb3d8bbwe\LocalState\settings.json" }
-    # @{ source = "$dotfiles\windows\komorebi-bar.json"; link = "$HOME\komorebi-bar.json" }
-    # @{ source = "$dotfiles\windows\komorebi.ahk"; link = "$HOME\OneDrive - CAB\Documents\AutoHotkey\komorebi.ahk" }
-    # @{ source = "$dotfiles\windows\komorebi.json"; link = "$HOME\komorebi.json" }
-    # @{ source = "$dotfiles\windows\whkdrc"; link = "$HOME\.config\whkdrc" }
 )
 
 Write-Host "Linking config files..."
