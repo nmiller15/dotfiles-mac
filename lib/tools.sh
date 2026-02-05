@@ -1,6 +1,7 @@
 . ~/Projects/dotfiles/shell/functions.sh
 
-install_if_missing fzf "brew installl fzf" 
+install_if_missing gdate "brew install coreutils"
+install_if_missing fzf "brew install fzf" 
 install_if_missing wget "brew install wget"
 install_if_missing jq "brew installl jq" 
 install_if_missing node "brew install node"
@@ -9,5 +10,6 @@ install_if_missing yabai "brew install koekeishiya/formulae/yabai && yabai --sta
 install_if_missing sketchybar "brew install FelixKratz/formulae/sketchybar"
 install_if_missing skhd "brew install koekeishiya/formulae/skhd && skhd --start-service"
 install_if_missing tldr "npm install -g tldr"
+install_if_missing rg "brew install ripgrep"
 install_if_missing gcc "brew install gcc"
 install_if_missing eza "brew install eza"

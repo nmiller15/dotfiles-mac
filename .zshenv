@@ -8,6 +8,6 @@ function yabai_launch() {
     local space="$1"
     local appName="$2"
 
-    yabai -m space --focus $space
+    /opt/homebrew/bin/yabai -m space --focus "$space"
     open -a $appName
 }
